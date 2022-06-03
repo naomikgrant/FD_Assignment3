@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Project: Rock, Paper, Scissors</title>
+</head>
+<body>
+    <h1>Main Project: Rock, Paper, Scissors :)</h1>
+    <h3>Steps to play the game in the website's console:</h3>
+    <ol>
+        <li>Press F12</li>
+        <li>Click "Console"</li>
+    </ol>
+    <script>
+    // Function for automatic computer output
+    let computerPlay = function() {
+    // Variables
+    let computer_move;
+    let number = Math.random();
+
+    // Computer's random move
+    if (number <= 0.33) {
+        computer_move = "rock";
+    }
+    else if (number > 0.33 && number <= 0.66) {
+        computer_move = "paper";
+    }
+    else if (number > 0.66) {
+        computer_move = "scissors";
+    }
+    console.log("Computer's move: ", computer_move);
+    }
+    
+    console.log("Let's play Rock, Paper, Scissors!");
+    
+    computerPlay()
+
+    </script>
+</body>
+</html>

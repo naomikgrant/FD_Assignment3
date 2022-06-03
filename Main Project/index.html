@@ -18,24 +18,76 @@
     let computerPlay = function() {
     // Variables
     let computer_move;
-    let number = Math.random();
+    let number = Math.random(); //Generates random number to aid in random move
 
     // Computer's random move
     if (number <= 0.33) {
-        computer_move = "Rock";
+        computer_move = "Rock"; // Computer plays rock
     }
     else if (number > 0.33 && number <= 0.66) {
-        computer_move = "Paper";
+        computer_move = "Paper"; // Computer plays paper
     }
     else if (number > 0.66) {
-        computer_move = "Scissors";
+        computer_move = "Scissors"; //Computer plays scissors
     }
-    console.log("Computer's move: ", computer_move);
+    return computer_move;
     }
-    
-    console.log("Let's play Rock, Paper, Scissors!");
-    computerPlay()
 
+    // Function for one game round
+    let gameRound = function(playerSelection, computerSelection) {
+    // Variables
+    let game_results;
+
+    // User plays via input
+    playerSelection = prompt("Rock, Paper, Scissors?"); // 
+    console.log("You played " + playerSelection + ".");
+
+    // Computer plays randomly
+    computerSelection = computerPlay();
+    console.log("Computer played " + computerSelection + ".");
+    
+    switch (playerSelection){
+        case "Rock": // If the user played Rock
+            if (computerSelection == "Rock") {          // And the computer played the same as the user
+                game_results = console.log("It's a tie!");         // Display that it is a tie
+            } 
+            else if (computerSelection == "Paper") {    // And the computer played Paper, display user as loser
+                game_results = console.log("You lose! " + computerSelection + " beats " + playerSelection +"!"); 
+            }
+            else if (computerSelection == "Scissors") { // And the computer played Scissors, display user as winner
+                game_results = console.log("You lose! " + playerSelection + " beats " + computerSelection +"!"); 
+            }
+            break;
+        case "Paper": // If the user played Paper
+            if (computerSelection == "Paper") {         // And the computer played the same as the user
+                game_results = console.log("It's a tie! ");         // Display that it is a tie
+            } 
+            else if (computerSelection == "Scissors") { // And the computer played Scissors, display user as loser
+                game_results = console.log("You lose! " + computerSelection + " beats " + playerSelection +"!"); 
+            }
+            else if (computerSelection == "Rock") {     // And the computer played Rock, display user as winner
+                game_results = console.log("You win! " + playerSelection + " beats " + computerSelection +"!"); 
+            }
+            break;
+        case "Scissors": // If the user played Scissors
+            if (computerSelection == "Scissors") {      // And the computer played the same as the user
+                game_results = console.log("It's a tie!");         // Display that it is a tie
+            } 
+            else if (computerSelection == "Rock") {     // And the computer played Rock, display user as loser
+                game_results = console.log("You lose! " + computerSelection + " beats " + playerSelection +"!"); 
+            }
+            else if (computerSelection == "Paper") {     // And the computer played Paper, display user as winner
+                game_results = console.log("You win! " + playerSelection + " beats " + computerSelection +"!"); 
+            }
+            break;
+    }   
+    
+    return game_results; // Returns the string with the final results
+    }
+    // Game Play
+    let human_move;
+    console.log("Let's play Rock, Paper, Scissors!");
+    gameRound(human_move, computerPlay());
     </script>
 </body>
 </html>

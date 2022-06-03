@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Project: Rock, Paper, Scissors</title>
+    <title>Main Project: ROCK, PAPER, SCISSORS</title>
 </head>
 <body>
-    <h1>Main Project: Rock, Paper, Scissors :)</h1>
+    <h1>Main Project: ROCK, PAPER, SCISSORS :)</h1>
     <h3>Steps to play the game in the website's console:</h3>
     <ol>
         <li>Press F12</li>
@@ -22,13 +22,13 @@
 
     // Computer's random move
     if (number <= 0.33) {
-        computer_move = "Rock"; // Computer plays rock
+        computer_move = "ROCK"; // Computer plays ROCK
     }
     else if (number > 0.33 && number <= 0.66) {
-        computer_move = "Paper"; // Computer plays paper
+        computer_move = "PAPER"; // Computer plays PAPER
     }
     else if (number > 0.66) {
-        computer_move = "Scissors"; //Computer plays scissors
+        computer_move = "SCISSORS"; //Computer plays SCISSORS
     }
     return computer_move;
     }
@@ -39,54 +39,55 @@
     let game_results;
 
     // User plays via input
-    playerSelection = prompt("Rock, Paper, Scissors?"); // 
+    playerSelection = prompt("ROCK, PAPER, SCISSORS?");  
+    playerSelection = playerSelection.toUpperCase();
     console.log("You played " + playerSelection + ".");
-
+    
     // Computer plays randomly
     computerSelection = computerPlay();
     console.log("Computer played " + computerSelection + ".");
     
     switch (playerSelection){
-        case "Rock": // If the user played Rock
-            if (computerSelection == "Rock") {          // And the computer played the same as the user
+        case "ROCK": // If the user played ROCK
+            if (computerSelection == "ROCK") {          // And the computer played the same as the user
                 game_results = console.log("It's a tie!");         // Display that it is a tie
             } 
-            else if (computerSelection == "Paper") {    // And the computer played Paper, display user as loser
+            else if (computerSelection == "PAPER") {    // And the computer played PAPER, display user as loser
                 game_results = console.log("You lose! " + computerSelection + " beats " + playerSelection +"!"); 
             }
-            else if (computerSelection == "Scissors") { // And the computer played Scissors, display user as winner
-                game_results = console.log("You lose! " + playerSelection + " beats " + computerSelection +"!"); 
-            }
-            break;
-        case "Paper": // If the user played Paper
-            if (computerSelection == "Paper") {         // And the computer played the same as the user
-                game_results = console.log("It's a tie! ");         // Display that it is a tie
-            } 
-            else if (computerSelection == "Scissors") { // And the computer played Scissors, display user as loser
-                game_results = console.log("You lose! " + computerSelection + " beats " + playerSelection +"!"); 
-            }
-            else if (computerSelection == "Rock") {     // And the computer played Rock, display user as winner
+            else if (computerSelection == "SCISSORS") { // And the computer played SCISSORS, display user as winner
                 game_results = console.log("You win! " + playerSelection + " beats " + computerSelection +"!"); 
             }
             break;
-        case "Scissors": // If the user played Scissors
-            if (computerSelection == "Scissors") {      // And the computer played the same as the user
-                game_results = console.log("It's a tie!");         // Display that it is a tie
+        case "PAPER": // If the user played PAPER
+            if (computerSelection == "PAPER") {         // And the computer played the same as the user
+                game_results = console.log("It's a tie! ");         // Display that it is a tie
             } 
-            else if (computerSelection == "Rock") {     // And the computer played Rock, display user as loser
+            else if (computerSelection == "SCISSORS") { // And the computer played SCISSORS, display user as loser
                 game_results = console.log("You lose! " + computerSelection + " beats " + playerSelection +"!"); 
             }
-            else if (computerSelection == "Paper") {     // And the computer played Paper, display user as winner
+            else if (computerSelection == "ROCK") {     // And the computer played ROCK, display user as winner
+                game_results = console.log("You win! " + playerSelection + " beats " + computerSelection +"!"); 
+            }
+            break;
+        case "SCISSORS": // If the user played SCISSORS
+            if (computerSelection == "SCISSORS") {      // And the computer played the same as the user
+                game_results = console.log("It's a tie!");         // Display that it is a tie
+            } 
+            else if (computerSelection == "ROCK") {     // And the computer played ROCK, display user as loser
+                game_results = console.log("You lose! " + computerSelection + " beats " + playerSelection +"!"); 
+            }
+            else if (computerSelection == "PAPER") {     // And the computer played PAPER, display user as winner
                 game_results = console.log("You win! " + playerSelection + " beats " + computerSelection +"!"); 
             }
             break;
     }   
-    
+
     return game_results; // Returns the string with the final results
     }
     // Game Play
     let human_move;
-    console.log("Let's play Rock, Paper, Scissors!");
+    console.log("Let's play ROCK, PAPER, SCISSORS!");
     gameRound(human_move, computerPlay());
     </script>
 </body>

@@ -38,4 +38,4 @@
         else {
             console.log(`The integer ${int3} is odd!`);
             alert(`The integer ${int3} is odd!`);
-        }
+        }        

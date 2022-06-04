@@ -1,5 +1,5 @@
- // Function for automatic computer output
- let computerPlay = function() {
+    // Function for automatic computer output
+    let computerPlay = function() {
     // Variables
     let computer_move;
     let number = Math.random(); //Generates random number to aid in random move
